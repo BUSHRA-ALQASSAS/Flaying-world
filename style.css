@@ -346,7 +346,7 @@ color: #333;
 }
 .packages .container .box .content .price span{
     font-size: 1.5rem;
-    color: #666;
+    color: #f34747;
     text-decoration: line-through;
 }
 
