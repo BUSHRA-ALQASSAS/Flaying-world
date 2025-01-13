@@ -9,6 +9,7 @@
     <link rel="stylesheet"href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
 </head>
 <body>
     <header>
@@ -140,9 +141,56 @@
                 
                     </div>
                     <div class="price">$90.00 <span>$120.00</span></div>
-                    <a href="#" class="btn">check now</a>
+                    <butten  class="btn" onclick="showDetails()">check now</butten>
                 </div>
             </div>
+
+            <div id="details" class="modal login-form" >
+                <div class="modal-content">
+                    <span class="close" onclick="closeDetails()">&times;</span>
+                    <h2>تفاصيل الرحلة</h2>
+                    <p>المكان: باريس</p>
+                    <p>السعر: $500</p>
+                    <p>التوقيت: 10:00 صباحاً</p>
+                    <button onclick="showBookingForm()" class="btn">احجز الآن</button>
+                </div>
+            </div>
+        
+            <div id="booking-form" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeBookingForm()">&times;</span>
+                    <h2>نموذج الحجز</h2>
+                    <form onsubmit="handleBooking(event)">
+                        <div class="inputbox">
+                            <label for="full-name">الاسم الكامل</label>
+                            <input type="text" placeholder="name" id="full-name">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" placeholder="email" name="email" id="email">
+                        </div>
+                        <div class="inputbox">
+                            <input type="number" placeholder="number">
+                            <input type="text" placeholder="subject">
+                        </div>
+                        <label for="passport">صورة عن جواز السفر</label>
+                        <input type="file" id="passport" name="passport" required>
+                        
+                        <label for="national-id">الرقم الوطني</label>
+                        <input type="text" id="national-id" name="national-id" required>
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        
+                        <button type="submit" class="btn">تأكيد الحجز</button>
+                    </form>
+                </div>
+            </div>
+        
+            <div id="confirmation" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeConfirmation()">&times;</span>
+                    <h2>تمت عملية الحجز بنجاح!</h2>
+                </div>
+            </div>
+            <!-- هذه تجربة للحجز يجب تعديلها -->
             <div class="box">
                 <img src="images/p-2.jpg" alt="">
                 <div class="content">
@@ -156,7 +204,7 @@
                         <i class="far fa-star"></i>
                     </div>
                     <div class="price">$100.00 <span>$130.00</span></div>
-                    <a href="#" class="btn">check now</a>
+                    <butten  class="btn" >check now</butten>
                 </div>
             </div>
             <div class="box">
@@ -173,7 +221,7 @@
                         
                     </div>
                     <div class="price">$135.00 <span>$160.00</span></div>
-                    <a href="#" class="btn">check now</a>
+                    <butten  class="btn">check now</butten>
                 </div>
             </div>
             <div class="box">
@@ -189,7 +237,7 @@
                         <i class="far fa-star"></i>
                     </div>
                     <div class="price">$160.00 <span>$200.00</span></div>
-                    <a href="#" class="btn">check now</a>
+                    <butten  class="btn">check now</butten>
                 </div>
             </div>
             <div class="box">
@@ -206,7 +254,7 @@
                     
                     </div>
                     <div class="price">$120.00 <span>$150.00</span></div>
-                    <a href="#" class="btn">check now</a>
+                    <butten  class="btn">check now</butten>
                 </div>
             </div>
             <div class="box">
@@ -222,7 +270,7 @@
                         <i class="far fa-star"></i>
                     </div>
                     <div class="price">$70.00 <span>$100.00</span></div>
-                    <a href="#" class="btn">check now</a>
+                    <butten  class="btn">check now</butten>
                 </div>
             </div>
         </div>
@@ -484,7 +532,48 @@
   
     <!------------------------------------------------------------------------------------------->
     <!------------------------------------------------------------------------------------------->
-
+    <section class="special-offers" id="offers">
+        <h1 class="heading">
+            <span>S</span>
+            <span>p</span>
+            <span>e</span>
+            <span>c</span>
+            <span>i</span>
+            <span>a</span>
+            <span>l</span>
+            &nbsp;
+            &nbsp;
+            <span>O</span>
+            <span>f</span>
+            <span>f</span>
+            <span>e</span>
+            <span>r</span>
+            <span>s</span>
+        </h1>
+        <div class="offers-container">
+            <div class="offer-box">
+                <div class="discount-badge">30% OFF</div>
+                <img src="images/p-1.jpg" alt="">
+                <div class="content">
+                    <h3>Summer Special</h3>
+                    <p>Book your summer vacation now and get 30% discount!</p>
+                    <div class="price">$999 <span>$1499</span></div>
+                    <a href="#" class="btn">Book now</a>
+                </div>
+            </div>
+            <div class="offer-box">
+                <div class="discount-badge">20% OFF</div>
+                <img src="images/p-2.jpg" alt="">
+                <div class="content">
+                    <h3>Family Package</h3>
+                    <p>Special family packages with activities included!</p>
+                    <div class="price">$1299<span>$1699</span></div>
+                    <a href="#" class="btn">Book now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ----------------------------------------------- -->
     <section class="footer">
         <div class="box-container">
             <div class="box">

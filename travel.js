@@ -4,7 +4,34 @@ let loginForm = document.querySelector(".login-form")
 let menuBar = document.querySelector("#menu-bar")
 let amenu = document.querySelector(".navbar")
 let vidBtn = document.querySelectorAll(".video-btn")
+function showDetails() {
+    document.getElementById('details').style.display = 'flex';
+}
+function closeDetails() {
+    document.getElementById('details').style.display = 'none';
+}
 
+function showBookingForm() {
+    closeDetails();
+    document.getElementById('booking-form').style.display = 'flex';
+}
+
+function closeBookingForm() {
+    document.getElementById('booking-form').style.display = 'none';
+}
+
+function closeConfirmation() {
+    document.getElementById('confirmation').style.display = 'none';
+}
+
+function handleBooking(event) {
+    event.preventDefault();
+    
+    // هنا يمكنك إضافة أي عملية تحقق إضافية للبيانات
+    
+    document.getElementById('booking-form').style.display = 'none';
+    document.getElementById('confirmation').style.display = 'flex';
+}
 function showbar(){
     searchBtn.classList.toggle("fa-times")
     searchForm.classList.toggle("active")
